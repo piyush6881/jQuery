@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- link to jquery CDN (content delivery network) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: fit-content;
+            margin: 0 auto;
+            height: fit-content;
+            border: 2px solid black;
+            position: relative;
+
+        }
+
+        .side {
+            position: absolute;
+            width: 50px;
+            left: -55px;
+
+        }
+
+        #sideimg1,
+        #sideimg2,
+        #sideimg3,
+        #sideimg4,
+        #sideimg5,
+        #sideimg6 {
+            width: 50px;
+            height: 50px;
+        }
+
+        .img1,
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6 {
+            width: 300px;
+            height: 360px;
+        }
+
+        .side img {
+            border: 1px solid black;
+        }
+        
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6 {
+            display: none;
+        }
+        .select{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="side">
+            <div><img src="../img/flip01.webp" alt="" id="sideimg1"></div>
+            <div><img src="../img/flip02.webp" alt="" id="sideimg2"></div>
+            <div><img src="../img/flip03.webp" alt="" id="sideimg3"></div>
+            <div><img src="../img/flip04.webp" alt="" id="sideimg4"></div>
+            <div><img src="../img/flip05.webp" alt="" id="sideimg5"></div>
+            <div><img src="../img/flip06.webp" alt="" id="sideimg6"></div>
+
+        </div>
+        <div class="select">
+            <div><img src="../img/flip01.webp" alt="" class="img1"></div>
+            <div><img src="../img/flip02.webp" alt="" class="img2"></div>
+            <div><img src="../img/flip03.webp" alt="" class="img3"></div>
+            <div><img src="../img/flip04.webp" alt="" class="img4"></div>
+            <div><img src="../img/flip05.webp" alt="" class="img5"></div>
+            <div><img src="../img/flip06.webp" alt="" class="img6"></div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#sideimg1").click(function () {
+                $(".img1").css({
+                   display:"block"
+                });
+                $(".img2").css({
+                   display:"none"
+                });
+                $(".img3").css({
+                   display:"none"
+                });
+                $(".img4").css({
+                   display:"none"
+                });
+                $(".img5").css({
+                   display:"none"
+                });
+                $(".img6").css({
+                   display:"none"
+                });
+            })
+
+
+            $("#sideimg2").click(function () {
+                $(".img1").css({
+                   display:"none"
+                });
+                $(".img2").css({
+                   display:"block"
+                });
+                $(".img3").css({
+                   display:"none"
+                });
+                $(".img4").css({
+                   display:"none"
+                });
+                $(".img5").css({
+                   display:"none"
+                });
+                $(".img6").css({
+                   display:"none"
+                });
+            })
+            
+            $("#sideimg3").click(function () {
+                $(".img1").css({
+                   display:"none"
+                });
+                $(".img2").css({
+                   display:"none"
+                });
+                $(".img3").css({
+                   display:"block"
+                });
+                $(".img4").css({
+                   display:"none"
+                });
+                $(".img5").css({
+                   display:"none"
+                });
+                $(".img6").css({
+                   display:"none"
+                });
+            })
+
+            $("#sideimg4").click(function () {
+                $(".img1").css({
+                   display:"none"
+                });
+                $(".img2").css({
+                   display:"none"
+                });
+                $(".img3").css({
+                   display:"none"
+                });
+                $(".img4").css({
+                   display:"block"
+                });
+                $(".img5").css({
+                   display:"none"
+                });
+                $(".img6").css({
+                   display:"none"
+                });
+            })
+
+            $("#sideimg5").click(function () {
+                $(".img1").css({
+                   display:"none"
+                });
+                $(".img2").css({
+                   display:"none"
+                });
+                $(".img3").css({
+                   display:"none"
+                });
+                $(".img4").css({
+                   display:"none"
+                });
+                $(".img5").css({
+                   display:"block"
+                });
+                $(".img6").css({
+                   display:"none"
+                });
+            })
+
+            $("#sideimg6").click(function () {
+                $(".img1").css({
+                   display:"none"
+                });
+                $(".img2").css({
+                   display:"none"
+                });
+                $(".img3").css({
+                   display:"none"
+                });
+                $(".img4").css({
+                   display:"none"
+                });
+                $(".img5").css({
+                   display:"none"
+                });
+                $(".img6").css({
+                   display:"block"
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

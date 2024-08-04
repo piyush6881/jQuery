@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-         
-        } 
 
-        p {
-            color: white;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-    </style>
-  </head>
-  <body>
-    <div style="background-color: red; height: 60px" id="one">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-        facilis!
-      </p>
-    </div>
-    <br />
-    <br />
-    <button id="hide">HIDE</button>
-    <button class="show">SHOW</button>
-    <button id="tog">TOGGLE</button>
-    <button id="slide">SLIDE</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- link to jquery CDN (content delivery network) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- internal CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
 
-    <script>
-      $(document).ready(function () {
+    }
+
+    p {
+      color: white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- inline CSS for background color  -->
+  <div style="background-color: red; height: 60px" id="one">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+      facilis!
+    </p>
+  </div>
+  <br />
+  <br />
+  <button id="hide">HIDE</button>
+  <button class="show">SHOW</button>
+  <button id="tog">TOGGLE</button>
+  <button id="slide">SLIDE</button>
+
+  <script>
+    // A page can't be manipulated safely until the document is "ready." 
+    // jQuery detects this state of readiness for you. Code included inside 
+    // $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code
+    //  to execute.
+    // command line $(document).ready(function(){   all function in between    }) 
+    // this makes document function ready to menuplate 
+    $(document).ready(function () {
 
 
-        $("#slide").click(function () {
-          $("#one").slideToggle(5000);
-        });
-
-        $("#hide").click(function () {
-          $("p").hide();
-        });
-
-        $(".show").click(function () {
-          $("p").show();
-        });
-
-        $("#tog").click(function () {
-          $("p").toggle();
-        });
+      $("#slide").click(function () {
+        $("#one").slideToggle(5000);
       });
-    </script>
-  </body>
+
+      $("#hide").click(function () {
+        $("p").hide();
+      });
+
+      $(".show").click(function () {
+        $("p").show();
+      });
+
+      $("#tog").click(function () {
+        $("p").toggle();
+      });
+    });
+  </script>
+</body>
+
 </html>

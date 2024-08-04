@@ -4,22 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- external cdn link for Jquery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- internal CSS -->
     <style>
 
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         } 
 
         P {
-            border: SOLID 2px black;
+            border: solid 2px black;
             height: 60px;
+            cursor: pointer;
         }
       div {
         background-color: red;
@@ -60,8 +64,10 @@
       </p>
     </div>
 
+    <!-- document ready function for menuplation. function this -->
     <script>
       $(document).ready(function () {
+
         $("p").click(function () {
           $(this).hide();
         });
