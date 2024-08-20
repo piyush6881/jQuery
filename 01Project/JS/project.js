@@ -1,0 +1,75 @@
+$(document).ready(function () {
+    // Toggle sidebar
+    $('#sidebarToggle').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        if ($('#sidebar').hasClass('active')) {
+            $('.content').css('margin-left', '0');
+        } else {
+            $('.content').css('margin-left', '250px');
+        }
+    });
+
+    // User settings dropdown
+    $('#userSettingsButton').on('click', function () {
+        $('#userSettingsDropdown').slideToggle();
+    });
+
+    // Chart.js examples
+    var ctx1 = document.getElementById('chart1').getContext('2d');
+    var chart1 = new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Dataset 1',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+        options: {}
+    });
+
+    var ctx2 = document.getElementById('chart2').getContext('2d');
+    var chart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Dataset 2',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                data: [12, 19, 3, 5, 2, 3]
+            }]
+        },
+        options: {}
+    });
+
+    var ctx3 = document.getElementById('chart3').getContext('2d');
+    var chart3 = new Chart(ctx3, {
+        type: 'pie',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow'],
+            datasets: [{
+                label: 'Dataset 3',
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+                data: [10, 20, 30]
+            }]
+        },
+        options: {}
+    });
+
+    var ctx4 = document.getElementById('chart4').getContext('2d');
+    var chart4 = new Chart(ctx4, {
+        type: 'doughnut',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow'],
+            datasets: [{
+                label: 'Dataset 4',
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+                data: [15, 25, 35]
+            }]
+        },
+        options: {}
+    });
+});

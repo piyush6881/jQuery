@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../01Project/css/project.css">
+</head>
+<body>
+<div class="wraper">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Company Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="user-settings">
+            <div class="dropdown">
+                <button id="userSettingsButton">User <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content" id="userSettingsDropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Content Area -->
+    <div class="content">
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Chart 1</h2>
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="grid-item">
+                <h2>Chart 2</h2>
+                <canvas id="chart2"></canvas>
+            </div>
+            <div class="grid-item">
+                <h2>Chart 3</h2>
+                <canvas id="chart3"></canvas>
+            </div>
+            <div class="grid-item">
+                <h2>Chart 4</h2>
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+</div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../01Project/JS/project.js"></script>
+</body>
+</html>
