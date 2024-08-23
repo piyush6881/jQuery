@@ -19,12 +19,12 @@ $(document).ready(function () {
     var chart1 = new Chart(ctx1, {
         type: 'line',
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7'],
             datasets: [{
                 label: 'Dataset 1',
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                data: [10, 20, 5, 40, 20, 10, 45]
             }]
         },
         options: {}
