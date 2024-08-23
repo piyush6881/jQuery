@@ -102,5 +102,13 @@ $('#number2').jQuerySimpleCounter({end: 55,duration: 3000});
 $('#number3').jQuerySimpleCounter({end: 359,duration: 2000});
 $('#number4').jQuerySimpleCounter({end: 246,duration: 2500});
 
-
+// Calander
+$('#calendar').datepicker({
+    inline:true,
+    firstDay: 1,
+    showOtherMonths:true,
+    dayNamesMin:['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  });
+  
+  
 });
