@@ -1,114 +1,203 @@
-$(document).ready(function () {
-    // Toggle sidebar
-    $('#sidebarToggle').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        if ($('#sidebar').hasClass('active')) {
-            $('.content').css('margin-left', '0');
-        } else {
-            $('.content').css('margin-left', '250px');
+// Other important pens.
+// Map: https://codepen.io/themustafaomar/pen/ZEGJeZq
+// Navbar: https://codepen.io/themustafaomar/pen/VKbQyZ
+
+'use strict'
+
+function $(selector) {
+  return document.querySelector(selector)
+}
+
+function find(el, selector) {
+  let finded
+  return (finded = el.querySelector(selector)) ? finded : null
+}
+
+function siblings(el) {
+  const siblings = []
+  for (let sibling of el.parentNode.children) {
+    if (sibling !== el) {
+      siblings.push(sibling)
+    }
+  }
+  return siblings
+}
+
+const showAsideBtn = $('.show-side-btn')
+const sidebar = $('.sidebar')
+const wrapper = $('#wrapper')
+
+showAsideBtn.addEventListener('click', function () {
+  $(`#${this.dataset.show}`).classList.toggle('show-sidebar')
+  wrapper.classList.toggle('fullwidth')
+})
+
+if (window.innerWidth < 767) {
+  sidebar.classList.add('show-sidebar');
+}
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 767) {
+    sidebar.classList.remove('show-sidebar')
+  }
+})
+
+// dropdown menu in the side nav
+var slideNavDropdown = $('.sidebar-dropdown');
+
+$('.sidebar .categories').addEventListener('click', function (event) {
+  event.preventDefault()
+
+  const item = event.target.closest('.has-dropdown')
+
+  if (! item) {
+    return
+  }
+
+  item.classList.toggle('opened')
+
+  siblings(item).forEach(sibling => {
+    sibling.classList.remove('opened')
+  })
+
+  if (item.classList.contains('opened')) {
+    const toOpen = find(item, '.sidebar-dropdown')
+
+    if (toOpen) {
+      toOpen.classList.add('active')
+    }
+
+    siblings(item).forEach(sibling => {
+      const toClose = find(sibling, '.sidebar-dropdown')
+
+      if (toClose) {
+        toClose.classList.remove('active')
+      }
+    })
+  } else {
+    find(item, '.sidebar-dropdown').classList.toggle('active')
+  }
+})
+
+$('.sidebar .close-aside').addEventListener('click', function () {
+  $(`#${this.dataset.close}`).classList.add('show-sidebar')
+  wrapper.classList.remove('margin')
+})
+// dbwr main content
+var performanceCtx = document.getElementById('performanceOverTimeChart').getContext('2d');
+var performanceChart = new Chart(performanceCtx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+            label: 'Performance Score',
+            data: [70, 72, 75, 78, 76, 79],
+            backgroundColor: 'rgba(0, 123, 255, 0.2)',
+            borderColor: 'rgba(0, 123, 255, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         }
-    });
-
-    // User settings dropdown
-    $('#userSettingsButton').on('click', function () {
-        $('#userSettingsDropdown').slideToggle();
-    });
-
-    // Chart.js examples
-    var ctx1 = document.getElementById('chart1').getContext('2d');
-    var chart1 = new Chart(ctx1, {
-        type: 'line',
-        data: {
-            labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7'],
-            datasets: [{
-                label: 'Dataset 1',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                data: [10, 20, 5, 40, 20, 10, 45]
-            }]
-        },
-        options: {}
-    });
-
-    var ctx2 = document.getElementById('chart2').getContext('2d');
-    var chart2 = new Chart(ctx2, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: 'Dataset 2',
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                data: [12, 19, 3, 5, 2, 3]
-            }]
-        },
-        options: {}
-    });
-
-    var ctx3 = document.getElementById('chart3').getContext('2d');
-    var chart3 = new Chart(ctx3, {
-        type: 'pie',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow'],
-            datasets: [{
-                label: 'Dataset 3',
-                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-                data: [10, 20, 30]
-            }]
-        },
-        options: {}
-    });
-
-    var ctx4 = document.getElementById('chart4').getContext('2d');
-    var chart4 = new Chart(ctx4, {
-        type: 'doughnut',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow'],
-            datasets: [{
-                label: 'Dataset 4',
-                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-                data: [15, 25, 35]
-            }]
-        },
-        options: {}
-    });
-    // For Counter
-    
-	$.fn.jQuerySimpleCounter = function( options ) {
-	    var settings = $.extend({
-	        start:  0,
-	        end:    100,
-	        easing: 'swing',
-	        duration: 400,
-	        complete: ''
-	    }, options );
-
-	    var thisElement = $(this);
-
-	    $({count: settings.start}).animate({count: settings.end}, {
-			duration: settings.duration,
-			easing: settings.easing,
-			step: function() {
-				var mathCount = Math.ceil(this.count);
-				thisElement.text(mathCount);
-			},
-			complete: settings.complete
-		});
-	};
-
-
-$('#number1').jQuerySimpleCounter({end: 12,duration: 3000});
-$('#number2').jQuerySimpleCounter({end: 55,duration: 3000});
-$('#number3').jQuerySimpleCounter({end: 359,duration: 2000});
-$('#number4').jQuerySimpleCounter({end: 246,duration: 2500});
-
-// Calander
-$('#calendar').datepicker({
-    inline:true,
-    firstDay: 1,
-    showOtherMonths:true,
-    dayNamesMin:['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  });
-  
-  
+    }
 });
+
+var departmentCtx = document.getElementById('departmentPerformanceChart').getContext('2d');
+var departmentChart = new Chart(departmentCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Sales', 'Tech', 'HR', 'Management'],
+        datasets: [{
+            label: 'Avg. Performance Score',
+            data: [85, 90, 75, 80],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+function generateReport() {
+alert('Generating custom report based on selected criteria...');
+// Additional code to interact with backend APIs to generate reports
+}
+
+function applyFilters() {
+var department = document.getElementById('department').value;
+var startDate = document.getElementById('date-start').value;
+var endDate = document.getElementById('date-end').value;
+alert(`Applying filters: Department = ${department}, Date Range = ${startDate} to ${endDate}`);
+// Code to fetch and update report data based on selected filters
+}
+document.addEventListener('DOMContentLoaded', function() {
+var ctx1 = document.getElementById('performanceDistributionChart').getContext('2d');
+var performanceChart = new Chart(ctx1, {
+    type: 'pie',
+    data: {
+        labels: ['Top Performers', 'Average', 'Below Average'],
+        datasets: [{
+            data: [120, 200, 80],
+            backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+        }]
+    }
+});
+
+var ctx2 = document.getElementById('monthlyGrowthChart').getContext('2d');
+var growthChart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May'],
+        datasets: [{
+            label: 'Growth Rate',
+            data: [5, 10, 4, 8, 6],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)'
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+const ctx = document.getElementById('performanceTrendsChart').getContext('2d');
+const performanceTrendsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{ 
+            label: 'Performance Score',
+            data: [80, 82, 85, 83, 86, 88],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+    }
+});
+});
+
