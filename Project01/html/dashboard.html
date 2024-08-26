@@ -3,9 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- for Counter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Custome CSS External -->
+    <link rel="stylesheet" href="../Css/dashboard.css">
+    <!-- calander -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
+     
 </head>
 <body>
-    
+<div class="wraper">
+    <!-- Header -->
+    <header class="header">
+            <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="user-settings">
+            <div class="dropdown">
+                <button id="userSettingsButton">User <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content" id="userSettingsDropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Help</a>
+                    <a href="../html/Login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li> <img src="../../img/logo.jpg" alt="Company Logo" class="logo"></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="../html/Login.html">Logout</a></li>
+        </ul>
+    </aside>
+<!-- Counter Section  -->
+    <div id="projectFacts" class="sectionClass">
+        <div class="fullWidth eight columns">
+            <div class="projectFactsWrap ">
+                <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
+                    <i class="fa fa-briefcase"></i>
+                    <p id="number1" class="number">12</p>
+                    <span></span>
+                    <p>Counter1</p>
+                </div>
+                <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
+                    <i class="fa fa-smile-o"></i>
+                    <p id="number2" class="number">55</p>
+                    <span></span>
+                    <p>Counter2</p>
+                </div>
+                <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
+                    <i class="fa fa-coffee"></i>
+                    <p id="number3" class="number">359</p>
+                    <span></span>
+                    <p>Counter3</p>
+                </div>
+                <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
+                    <i class="fa fa-camera"></i>
+                    <p id="number4" class="number">246</p>
+                    <span></span>
+                    <p>Counter4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Chart 1</h2>
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="grid-item">
+                <h2>Chart 2</h2>
+                <canvas id="chart2"></canvas>
+            </div>
+            <div class="grid-item">
+                <h2>Chart 3</h2>
+                <canvas id="chart3"></canvas>
+            </div>
+            <div class="grid-item">
+                <h2>Chart 4</h2>
+                <canvas id="chart4"></canvas>
+            </div>
+
+        </div>
+    </div>
+<!-- Calender Section -->
+ <Section>
+    <div class="container">
+        <div id="calendar"></div>
+        </div> 
+
+ </Section>
+    <!-- Analytical Section -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+</div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <!-- Calander  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 </body>
 </html>
