@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion With JQuery UI</title>
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- pre defined UI for accordian -->
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".accordion").accordion();
+        });
+    </script>
+
+    <style>
+        .dark {
+            background-color: black;
+        }
+
+        .accordian {
+            font-size: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Accordion With JQuery UI -->
+    <div class="dark">
+        <h1>Accordion</h1>
+
+        <div class="accordion">
+            <h3>Tab1</h3>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio laudantium dicta, vel, sapiente vero
+                    culpa
+                    nihil eum temporibus perferendis odit quasi, delectus dolores! Maxime quo pariatur officiis
+                    explicabo
+                    facilis ipsa odio tempora animi dolores aut facere architecto veritatis ipsum labore illum eius,
+                    earum
+                    quibusdam molestiae! Tempore consequuntur ex corporis quos?</p>
+
+            </div>
+            <h3>Tab2</h3>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio laudantium dicta, vel, sapiente vero
+                    culpa
+                    nihil eum temporibus perferendis odit quasi, delectus dolores! Maxime quo pariatur officiis
+                    explicabo
+                    facilis ipsa odio tempora animi dolores aut facere architecto veritatis ipsum labore illum eius,
+                    earum
+                    quibusdam molestiae! Tempore consequuntur ex corporis quos?</p>
+
+            </div>
+            <h3>Tab3</h3>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio laudantium dicta, vel, sapiente vero
+                    culpa
+                    nihil eum temporibus perferendis odit quasi, delectus dolores! Maxime quo pariatur officiis
+                    explicabo
+                    facilis ipsa odio tempora animi dolores aut facere architecto veritatis ipsum labore illum eius,
+                    earum
+                    quibusdam molestiae! Tempore consequuntur ex corporis quos?</p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

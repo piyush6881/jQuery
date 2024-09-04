@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #textbox {
+           padding: 16px ;
+           text-align: center;
+           font-size: 18px;
+           height: 90px;
+           background-color: grey;
+           width: 500px;
+           color: white;
+        }
+     </style>
+</head>
+<body>
+    <!-- Add Custom Cursor in your programme -->
+
+    
+    <h2>Changing Cursor to Waiting State</h2>
+   <p id="textbox" onmouseover="sampleFunction()">
+      This is a sample program to see how to change the cursor appearance when the pointer is over an element
+   </p>
+   <script>
+      function sampleFunction() {
+         document.getElementById("textbox").style.cursor = "wait";
+      }
+   </script>
+</body>
+</html>
